@@ -111,7 +111,7 @@ comprobó es un hueco de verificación, no una prueba de que algo esté roto.
 
 Si tu resultado no coincide con estos, estás aplicando mal la rúbrica.
 
-- Kit recién creado desde la plantilla, con carpetas y skills pero sin `/comenzar`: **Sin probar**.
+- Kit recién clonado, con carpetas y skills pero sin `/comenzar`: **Sin probar**.
   Las carpetas no dan puntos.
 - **Justo después de `/comenzar`, con el contexto bien llenado y nada más: entre 15 y 18, o sea
   Sin probar.** Medido en una corrida real, no estimado. Contexto llega a 14 de 25 y ahí se

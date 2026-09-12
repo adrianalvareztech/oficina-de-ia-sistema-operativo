@@ -191,7 +191,7 @@ Este es el único archivo que esta skill puede escribir.
 
 ## Verificación
 
-- Kit recién creado desde la plantilla, sin `/comenzar`: tiene que salir en "Sin probar", con
+- Kit recién clonado, sin `/comenzar`: tiene que salir en "Sin probar", con
   Contexto muy bajo y Autonomía en cero.
 - Sistema con `contexto/` lleno pero nada conectado ni corriendo: el tope de 49 tiene que
   aplicar, y el reporte tiene que decir cuál tope y por qué.

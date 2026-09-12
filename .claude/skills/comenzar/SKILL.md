@@ -1,6 +1,6 @@
 ---
 name: comenzar
-description: Úsalo el primer día, justo después de crear tu repositorio y abrirlo con Claude Code. Te entrevista y arma tu contexto desde cero, adaptando las preguntas a lo que haces (dueño de negocio, freelance, empleado, creador o estudiante). Vuelve a correrlo cuando algo cambie a fondo.
+description: Úsalo el primer día, justo después de clonar el kit y abrirlo con Claude Code. Te entrevista y arma tu contexto desde cero, adaptando las preguntas a lo que haces (dueño de negocio, freelance, empleado, creador o estudiante). Vuelve a correrlo cuando algo cambie a fondo.
 ---
 
 ## Qué hace
@@ -32,7 +32,32 @@ no se arma aquí.
 
 ## Ejecución
 
-### Paso 0. Revisa si ya hay entrevista
+### Paso 0. Desconecta el repositorio de donde lo clonaste
+
+Antes de preguntar nada, corre `git remote -v`.
+
+Si `origin` apunta a `adrianalvareztech/oficina-de-ia-sistema-operativo`, este sistema todavía
+está conectado al repositorio de donde salió el kit. Quítalo:
+
+```
+git remote remove origin
+```
+
+Dilo en una línea mientras lo haces: a partir de ahora esta carpeta es suya y de nadie más, y
+aquí van a vivir sus precios y sus clientes.
+
+Después ofrécele, sin insistir, crear el suyo en privado para tener respaldo:
+
+```
+gh repo create <nombre> --private --source=. --push
+```
+
+Si no quiere, o no tiene `gh`, no pasa nada: el sistema funciona igual, solo vive en su
+computadora. No lo conviertas en un requisito ni te detengas aquí.
+
+Si `origin` ya apunta a otro lado, o no hay ninguno, no hagas nada y sigue.
+
+### Paso 1. Revisa si ya hay entrevista
 
 Lee `entrevista.md` si existe. Si tiene respuestas, no vuelvas a preguntar esas. Di cuáles ya
 están y pregunta si quiere completar el resto o armar el contexto con lo que ya hay.
@@ -40,7 +65,7 @@ están y pregunta si quiere completar el resto o armar el contexto con lo que ya
 Si el `contexto/` ya está lleno y esto es una segunda corrida, pregunta qué cambió y toca solo
 eso. Antes de sobrescribir, mueve los archivos viejos a `archivados/contexto-{AAAA-MM-DD}/`.
 
-### Paso 1. La entrevista
+### Paso 2. La entrevista
 
 Una pregunta a la vez, en conversación, no como formulario. Escribe cada respuesta en
 `entrevista.md` conforme avanzas.
@@ -104,7 +129,7 @@ como lo que es: algo dicho, no comprobado.
 
 Todavía no se conecta nada más, solo se anota.
 
-### Paso 2. Armar el contexto
+### Paso 3. Armar el contexto
 
 Con todas las respuestas, escribe de un solo golpe. No vayas escribiendo archivos parciales
 durante la entrevista.
@@ -131,7 +156,7 @@ durante la entrevista.
 `CRECIMIENTO.md` dice cuándo. La única excepción: si la respuesta de precios salió larga y
 detallada, sepárala a `contexto/precios.md` y deja la ruta en `sobre-el-negocio.md`.
 
-### Paso 3. Limpia el mapa de ruteo
+### Paso 4. Limpia el mapa de ruteo
 
 El `CLAUDE.md` trae filas para archivos que crecen después. Una ruta que apunta a un archivo
 inexistente es peor que no tener la ruta, porque el sistema se inventa el contenido y lo redacta
@@ -140,7 +165,7 @@ bien.
 Borra del mapa las filas de lo que no creaste. `CRECIMIENTO.md` explica cuándo volver a
 agregarlas, y `/apuntar` las vuelve a poner cuando llegue el momento.
 
-### Paso 4. Cierre
+### Paso 5. Cierre
 
 Una pantalla, no un resumen largo. Tres líneas:
 
@@ -158,7 +183,7 @@ parte de eso podría hacer la IA en vez de él.
 ## Reglas
 
 1. **La muestra de voz se pega, no se escribe en vivo.** Sin excepción.
-2. **Un solo golpe de escritura en el paso 2.**
+2. **Un solo golpe de escritura en el paso 3.**
 3. **Cuatro archivos de contexto el primer día, no más.** Si te dan ganas de crear un quinto, no
    lo crees: el lugar de esa idea es `CRECIMIENTO.md`.
 4. **No inventes para llenar un archivo.** Si alguien no tiene precios, no tiene equipo o no tiene
@@ -171,6 +196,7 @@ parte de eso podría hacer la IA en vez de él.
 
 ## Verificación
 
+- El remoto: después del paso 0, `git remote -v` no devuelve el repositorio del kit.
 - Primera corrida: `contexto/` queda con cuatro archivos de contenido real, no genérico, y el
   `CLAUDE.md` tiene el nombre de verdad, no los `{{...}}` sin llenar.
 - Perfil no comercial: un empleado o un estudiante termina sin ningún archivo vacío y sin haber
