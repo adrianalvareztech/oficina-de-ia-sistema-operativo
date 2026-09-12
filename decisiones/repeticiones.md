@@ -15,9 +15,13 @@ Cuatro datos separados por punto medio: la fecha, qué hiciste, cuánto te tomó
 de hacerlo. Ese último es el que más sirve después, porque es el que dice qué parte hay que
 arreglar.
 
-Una línea de verdad se ve así, con tus palabras y tu fecha:
+Una línea de verdad se ve así, con tus palabras y tu fecha. Empieza con guion, como cualquier
+lista:
 
-> 2026-01-15 · qué hiciste · 40 min · qué te molestó
+> `- 2026-01-15 · qué hiciste · 40 min · qué te molestó`
+
+Si no sabes cuánto te tomó, escribe lo que sepas ("toda la semana", "como media hora"). Vale más
+un dato flojo que dejarlo en blanco.
 
 Cuando un pedido de `/descubrir-automatizaciones` resuelve unas líneas, se marcan con la fecha y
 a qué ficha fueron. No se borran: dentro de seis meses, saber cuánto dolía antes es la única

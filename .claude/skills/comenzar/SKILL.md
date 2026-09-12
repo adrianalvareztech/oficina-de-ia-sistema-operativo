@@ -106,6 +106,28 @@ en vez de pegarlo, detente y pídele que lo pegue de algo que ya haya escrito an
 redactado en el momento ya viene contaminado por la conversación y no captura cómo escribe de
 verdad. Dilo así, sin rodeos, y espera el pegado.
 
+**Antes de guardarlas, límpialas.** Un correo o un mensaje real casi siempre trae cosas que no
+son suyas: el nombre de la otra persona, correos, teléfonos, links de Drive o de un tablero,
+importes, y detalles del negocio de un cliente. Todo eso se queda escrito para siempre en
+`contexto/voz.md`, y ese archivo se abre cada vez que el sistema redacta algo.
+
+Sustituye, sin preguntar, y avísale en una línea de lo que cambiaste:
+
+| Qué encuentras | Por qué lo cambias |
+|---|---|
+| Nombres de otras personas | `[nombre]` |
+| Correos, teléfonos, direcciones | `[correo]`, `[teléfono]` |
+| Links de Drive, Miro, Notion, cualquier tablero | `[link]` |
+| Importes, plazos y datos del negocio de un cliente | `[dato del cliente]` |
+
+**Lo que estás capturando es el registro, no el contenido.** Cómo arma las frases, si tutea, qué
+tan largo escribe, cómo abre y cómo cierra. Nada de eso se pierde al quitar un nombre o un link,
+y así el archivo se puede subir a un repositorio, enseñar en pantalla o compartir sin exponer a
+nadie.
+
+Si la persona dice que prefiere dejarlo tal cual, respétalo, pero dilo claro una vez: ese archivo
+va a tener datos de terceros y no debería salir de su computadora.
+
 **5. ¿Qué tarea se te come la semana?** Lo que más pesa, no lo más difícil.
 
 **6. ¿Cuánto cobras?** Según la tabla. Si no cobra por lo que hace, que diga "no aplica" y sigue.
@@ -140,10 +162,11 @@ durante la entrevista.
   si cobras. Corto. Este archivo es un índice: cuando crezca y toque separar precios o clientes a
   su propio archivo, aquí queda la ruta, no el contenido repetido.
 - `contexto/prioridades.md`: pregunta 3. Con la fecha de hoy arriba, porque este archivo caduca.
-- `contexto/voz.md`: las muestras de la pregunta 4, pegadas tal cual, con una nota corta arriba de
-  cuándo usarlas.
+- `contexto/voz.md`: las muestras de la pregunta 4, ya limpias de datos de terceros, con una nota
+  corta arriba de cuándo usarlas y otra que diga qué se sustituyó.
 - `decisiones/repeticiones.md`: la pregunta 5 como primera línea, con la fecha de hoy, **abajo del
-  encabezado "Mis repeticiones"**. No toques nada de arriba, que es instructivo.
+  encabezado "Mis repeticiones"** y empezando con guion, igual que el ejemplo del archivo. No
+  toques nada de arriba, que es instructivo.
 - `conexiones.md`: una fila por herramienta de la pregunta 7. Las que nombró como CLI instalado
   van en **Sin comprobar**; todas las demás en **No**. Ninguna en Sí: para eso hace falta que algo
   la haya leído de verdad, y eso todavía no pasa. Borra la fila de ejemplo. Si alguien no usa
@@ -164,6 +187,11 @@ bien.
 
 Borra del mapa las filas de lo que no creaste. `CRECIMIENTO.md` explica cuándo volver a
 agregarlas, y `/apuntar` las vuelve a poner cuando llegue el momento.
+
+**Y borra también el párrafo que empieza con "Las filas de `contexto/` todavía no tienen archivo
+detrás".** Es una instrucción para el momento de instalar, y al terminar ya es mentira: los
+archivos existen. Si se queda, el mapa contradice al disco desde el primer día. El párrafo de
+"Este mapa se queda corto a propósito" sí se queda, ese sigue siendo cierto.
 
 ### Paso 5. Cierre
 
@@ -204,7 +232,9 @@ parte de eso podría hacer la IA en vez de él.
 - La pregunta 5 dejó su línea en `decisiones/repeticiones.md` con fecha, bajo el encabezado, y
   el resto del archivo quedó intacto.
 - `conexiones.md` ya no tiene la fila de ejemplo.
-- Ruteo: cada fila del mapa apunta a un archivo que existe.
+- Ruteo: cada fila del mapa apunta a un archivo que existe, y el `CLAUDE.md` ya no trae el
+  párrafo de "todavía no tienen archivo detrás".
+- Privacidad: `contexto/voz.md` no tiene nombres de terceros, correos, teléfonos ni links vivos.
 - Voz: si escriben una muestra en vivo en vez de pegarla, la skill la rechaza y pide una real.
 - Segunda corrida: pregunta qué cambió, no repite la entrevista, y respalda lo viejo en
   `archivados/`.

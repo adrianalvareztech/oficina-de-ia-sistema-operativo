@@ -46,6 +46,10 @@ Esta es la única pregunta con una regla que no se dobla: **se pega, no se escri
 texto que redactas en este momento ya salió distinto a como escribes de verdad, porque lo
 escribiste sabiendo que era una muestra. Abre lo último que mandaste y cópialo.
 
+Pega tal cual y no te detengas a editarlo: `/comenzar` se encarga de quitar nombres de otras
+personas, correos, teléfonos y links antes de guardarlo. Lo que importa de una muestra es cómo
+escribes, no de quién hablabas.
+
 [pega aquí]
 
 [pega aquí la segunda]
