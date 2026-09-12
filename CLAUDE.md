@@ -2,13 +2,6 @@
 
 {{Una o dos líneas: quién eres y qué haces. Lo llena `/comenzar`.}}
 
-Esto es lo primero que se lee al abrir una sesión. Arriba va lo general, lo que conviene que el
-sistema sepa siempre sin tener que ir a buscarlo. De ahí para abajo, apunta.
-
-La diferencia importa. Si toda tu información estuviera escrita adentro de este archivo, el
-sistema tendría que leerla completa para contestarte cuánto cobras, incluida la parte de tus
-clientes y tus procesos que no hacía falta. Apuntando lee poco y va directo.
-
 ## Hasta dónde manda este archivo
 
 Manda en todo el sistema. Una carpeta puede tener su propio `CLAUDE.md` y ese manda adentro de

@@ -59,7 +59,8 @@ Se construyen en orden. No es estético: cada una necesita la anterior.
 ## Qué hay adentro
 
 ```
-CLAUDE.md               el mapa. Dice dónde está cada cosa, no la contiene
+CLAUDE.md               el mapa. Dice dónde está cada cosa, no la contiene, para que
+                        el sistema lea poco y llegue directo
 entrevista.md           las 7 preguntas de /comenzar. Puedes llenarlas antes
 contexto/               quién eres, qué haces, qué te importa, cómo escribes
 conexiones.md           registro de qué herramientas alcanza el sistema
