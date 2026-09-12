@@ -16,21 +16,36 @@ a eso, así que no vas a tener que inventar un catálogo de servicios si no vend
 
 ## Cómo empezar
 
-1. Arriba de esta página, dale a **Use this template** y crea tu propio repositorio. Ponlo en
-   privado: aquí van a vivir tus precios y tus clientes reales.
-2. Clónalo a tu computadora y ábrelo con Claude Code.
-3. Corre `/comenzar`. Te va a hacer siete preguntas. Entre más reales las respuestas, mejor
-   sirve el sistema. Ninguna te pide escribir un manual: si una te está tomando más de tres
-   minutos, contesta lo que tengas y sigue.
+1. Clónalo a tu computadora.
+
+   ```
+   git clone https://github.com/adrianalvareztech/oficina-de-ia-sistema-operativo.git mi-sistema
+   cd mi-sistema
+   ```
+
+2. **Desconéctalo de mi repositorio.** Este paso no te lo saltes: recién clonado, tu carpeta
+   sigue apuntando a mi repo, y ahí van a vivir tus precios y tus clientes.
+
+   ```
+   git remote remove origin
+   ```
+
+   Con eso ya es tuya y nada más tuya. Si además lo quieres respaldado, crea el tuyo **en
+   privado** y súbelo:
+
+   ```
+   gh repo create mi-sistema --private --source=. --push
+   ```
+
+   Si no haces esto último el sistema funciona igual, solo que vive nada más en tu computadora.
+
+3. Ábrelo con Claude Code y corre `/comenzar`. Te va a hacer siete preguntas. Entre más reales
+   las respuestas, mejor sirve el sistema. Ninguna te pide escribir un manual: si una te está
+   tomando más de tres minutos, contesta lo que tengas y sigue.
 4. Cuando termine, pregúntale "¿en qué me conviene enfocarme esta semana?". Ahí deja de ser una
    carpeta.
 5. Conecta una herramienta de verdad, la que más uses. Anótala en `conexiones.md`.
 6. Cuando algo se sienta incompleto, corre `/auditoria-de-sistema`.
-
-Sobre el paso 1: no clones este repositorio directamente. Si lo haces, tu copia queda apuntando
-a mi repositorio, no vas a poder respaldar tus cambios, y tus datos reales terminan en una
-carpeta conectada a algo que no es tuyo. Con **Use this template** el repositorio es tuyo desde
-el primer minuto, y si se muere tu computadora tu sistema sigue existiendo.
 
 ## Las cuatro capas
 
