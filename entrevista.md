@@ -14,7 +14,7 @@ Cuando cambies algo aquí, vuelve a correr `/comenzar` y actualiza solo lo que s
 
 ---
 
-## 1. ¿Qué haces?
+## 1. ¿A qué te dedicas?
 
 En tus palabras, sin formalismos. Si tienes un negocio, qué vendes. Si trabajas para alguien,
 cuál es tu puesto de verdad. Si estudias, qué estudias y qué estás construyendo.

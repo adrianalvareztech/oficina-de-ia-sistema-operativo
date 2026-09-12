@@ -49,7 +49,10 @@ Si alguien se tarda mucho en una pregunta, o empieza a inventar para llenarla, c
 basta, esto crece con el uso". Prefiere una respuesta corta y real a una larga y armada. Vale
 para las siete y sobre todo para la 6.
 
-**1. ¿Qué haces?** En sus palabras, sin formalismos.
+**1. ¿A qué te dedicas?** En sus palabras, sin formalismos.
+
+Pregúntala así, no como "¿qué haces?". Esa se contesta con lo que la persona está haciendo en
+este momento y no con su oficio.
 
 De aquí sale el perfil. No lo preguntes directo, dedúcelo, y si no queda claro pregunta una sola
 cosa para desempatar. En qué cambian las preguntas 2, 5 y 6:
