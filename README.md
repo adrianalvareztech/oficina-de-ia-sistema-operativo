@@ -72,7 +72,7 @@ corridas/               qué pasó cada vez que algo corrió solo
 auditorias/             reportes fechados de /auditoria-de-sistema
 archivados/             cosas viejas. No se borran, se mueven
 CRECIMIENTO.md          qué agregar cuando el sistema crezca
-.claude/skills/         tus cuatro comandos base, más los que construyas
+.claude/skills/         tus comandos base, más los que construyas
 ```
 
 ## Tus comandos
@@ -82,6 +82,8 @@ CRECIMIENTO.md          qué agregar cuando el sistema crezca
   gruesa está cada capa. Guarda el reporte con fecha.
 - `/descubrir-automatizaciones`: encuentra qué automatizar después.
 - `/apuntar`: mete algo nuevo al mapa del `CLAUDE.md` y comprueba que la ruta sirva.
+- `/cerebro-del-sistema`: convierte tus notas reales (las que ya usan `[[wikilinks]]`) en una
+  constelación 3D navegable, local y sin dependencias que instalar.
 
 ## Antes de subir nada a GitHub
 
