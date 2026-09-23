@@ -62,20 +62,29 @@
     .showNavInfo(false)
     .nodeId("id")
     .nodeLabel((n) => `${n.titulo}`)
-    .nodeVal((n) => 1.4 + Math.min(n.grado, 8) * 0.6)
+    .nodeRelSize(4.2)
+    .nodeVal((n) => 1.3 + Math.min(n.grado, 8) * 0.55)
     .nodeColor((n) => (visible(n) ? colorPorCategoria[n.categoria] || "#888" : "rgba(80,80,80,0.15)"))
-    .nodeOpacity(0.92)
+    .nodeOpacity(0.95)
+    .nodeResolution(12)
     .nodeVisibility((n) => visible(n))
     .linkVisibility((l) => visible(l.source) && visible(l.target))
-    .linkColor(() => "rgba(232, 163, 61, 0.35)")
-    .linkOpacity(0.35)
-    .linkWidth(0.4)
+    .linkColor(() => "rgba(232, 163, 61, 0.55)")
+    .linkOpacity(0.55)
+    .linkWidth(0.9)
     .linkDirectionalParticles(1)
-    .linkDirectionalParticleWidth(1.4)
+    .linkDirectionalParticleWidth(2.4)
     .linkDirectionalParticleSpeed(0.004)
     .linkDirectionalParticleColor(() => "#e8a33d")
     .onNodeClick(abrirNota)
     .onBackgroundClick(() => cerrarNota());
+
+  // Mas repulsion y enlaces mas largos: con los valores por defecto, un
+  // grafo de varios cientos de notas queda amontonado sin importar donde
+  // pongas la camara. Escala con el tamano real, no un numero fijo.
+  const repulsion = -70 - Math.min(nodos.length, 800) * 0.6;
+  Graph.d3Force("charge").strength(repulsion);
+  if (Graph.d3Force("link")) Graph.d3Force("link").distance(38);
 
   function visible(n) {
     const id = typeof n === "object" ? n.id : n;
@@ -85,11 +94,30 @@
     return true;
   }
 
-  // Camara: entrada suave, luego orbita lenta que se detiene si el usuario toca.
-  Graph.cameraPosition({ x: 0, y: 0, z: Math.max(280, nodos.length * 6) });
-  let orbitando = true;
+  // Camara: encuadra al tamano real del grafo (zoomToFit), no a una
+  // distancia adivinada por cuantos nodos hay. La simulacion de fuerzas
+  // sigue moviendo los nodos varios segundos, asi que reencuadra varias
+  // veces mientras se acomoda en vez de adivinar un solo momento "ya
+  // termino": onEngineStop no es confiable con particulas direccionales
+  // en los links, se queda animando y nunca dispara.
+  Graph.cameraPosition({ x: 0, y: 0, z: 600 });
+  let orbitando = false;
+  let intervino = false;
   const controles = Graph.controls();
-  controles.addEventListener("start", () => (orbitando = false));
+  controles.addEventListener("start", () => {
+    orbitando = false;
+    intervino = true;
+  });
+  let reencuadres = 0;
+  const timerEncuadre = setInterval(() => {
+    if (intervino || reencuadres >= 9) {
+      clearInterval(timerEncuadre);
+      if (!intervino) orbitando = true;
+      return;
+    }
+    Graph.zoomToFit(500, 130);
+    reencuadres += 1;
+  }, 700);
   let angulo = 0;
   (function orbita() {
     if (orbitando) {
