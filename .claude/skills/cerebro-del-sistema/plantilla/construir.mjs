@@ -159,12 +159,16 @@ const grafo = {
   nombre: cfg.nombre,
   generado: new Date().toISOString(),
   categorias: cfg.categorias.map((c) => ({ id: c.id, etiqueta: c.etiqueta, color: c.color })),
+  // El extracto va adentro del grafo para que el panel de nota funcione
+  // tambien cuando la app se sirve como sitio estatico (Vercel), sin el
+  // endpoint /api/nota. Sin frontmatter, 600 caracteres.
   nodos: notas.map((n) => ({
     id: n.id,
     titulo: n.titulo,
     categoria: n.categoria,
     ruta: n.rutaRel,
     grado: grado.get(n.id) || 0,
+    extracto: (textos.get(n.id) || "").replace(/^---[\s\S]*?---\s*/, "").trim().slice(0, 600),
   })),
   enlaces,
 };

@@ -8,6 +8,8 @@ import ForceGraph3D from "3d-force-graph";
 const ACENTO = "#e8a33d";
 const $ = (id) => document.getElementById(id);
 const reducirMovimiento = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const enLocal = ["127.0.0.1", "localhost"].includes(location.hostname);
+if (!enLocal) $("abrir-carpeta").hidden = true;
 
 const datos = await (await fetch("grafo.json")).json();
 const nodos = datos.nodos.map((n) => ({ ...n }));
@@ -384,11 +386,13 @@ async function abrirNota(nodo) {
   refrescar();
   const k = 1.9;
   enfocar({ x: nodo.x * k, y: nodo.y * k + 10, z: nodo.z * k }, { x: nodo.x, y: nodo.y, z: nodo.z }, 900);
+  // En local, el servidor lee el archivo completo. Servido como sitio
+  // estatico (Vercel), no hay /api: se usa el extracto que trae el grafo.
   try {
-    const r = await fetch(`/api/nota?ruta=${encodeURIComponent(nodo.ruta)}`);
-    $("nota-texto").textContent = r.ok ? await r.text() : "no se pudo leer el archivo.";
+    const r = enLocal ? await fetch(`/api/nota?ruta=${encodeURIComponent(nodo.ruta)}`) : null;
+    $("nota-texto").textContent = r && r.ok ? await r.text() : (nodo.extracto || "sin extracto disponible.");
   } catch {
-    $("nota-texto").textContent = "no se pudo leer el archivo.";
+    $("nota-texto").textContent = nodo.extracto || "no se pudo leer el archivo.";
   }
 }
 function cerrarNota() {
