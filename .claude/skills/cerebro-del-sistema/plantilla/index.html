@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Cerebro del Sistema</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://esm.sh/three@0.185.1",
+    "3d-force-graph": "https://esm.sh/3d-force-graph@1.80.0?deps=three@0.185.1"
+  }
+}
+</script>
+</head>
+<body>
+  <div id="grafo"></div>
+  <div id="etiquetas"></div>
+
+  <div id="marca">
+    <span id="marca-nombre">Cerebro del Sistema</span>
+    <span id="marca-conteo" class="tenue"></span>
+  </div>
+
+  <div id="leyenda"></div>
+
+  <div id="controles">
+    <button id="btn-crecer" type="button">Ver crecer</button>
+    <button id="btn-mover" type="button" aria-pressed="true">Pausar</button>
+    <button id="btn-cine" type="button" aria-pressed="false">Cine</button>
+  </div>
+
+  <div id="relato" hidden>
+    <div id="relato-titulo"></div>
+    <div id="relato-detalle" class="tenue"></div>
+    <div id="relato-barra"><span></span></div>
+  </div>
+
+  <div id="panel-nota">
+    <button id="cerrar-nota" type="button" aria-label="cerrar">&times;</button>
+    <div id="nota-categoria" class="tenue"></div>
+    <h2 id="nota-titulo"></h2>
+    <div id="nota-ruta" class="tenue"></div>
+    <div id="nota-conexiones" class="tenue"></div>
+    <pre id="nota-texto"></pre>
+    <button id="abrir-carpeta" type="button">Abrir carpeta</button>
+  </div>
+
+  <div id="buscador">
+    <input id="buscar-input" type="text" placeholder="Buscar una nota..." autocomplete="off">
+    <span id="buscar-resultado" class="tenue"></span>
+  </div>
+
+  <div id="aviso" hidden></div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
